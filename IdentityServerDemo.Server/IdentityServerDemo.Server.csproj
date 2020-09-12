@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IdentityServer4" Version="4.0.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.css" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\mixins\_size.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\mixins\_visibility.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_media.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_print.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_reboot.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_button-group.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_utilities.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_forms.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_tables.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_buttons.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\utilities\_shadows.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\utilities\_background.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\utilities\_float.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\utilities\_flex.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\utilities\_borders.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\utilities\_clearfix.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\utilities\_align.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\utilities\_sizing.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\utilities\_position.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\utilities\_embed.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\utilities\_visibility.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\utilities\_stretched-link.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\utilities\_text.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\utilities\_spacing.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\utilities\_display.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\utilities\_overflow.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_images.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\utilities\_screenreaders.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_close.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_pagination.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_list-group.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_grid.scss" />
+    <Content Remove="wwwroot\lib\jquery\dist\jquery.slim.min.map" />
+    <Content Remove="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_spinners.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_card.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_modal.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_nav.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\README.md" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_mixins.scss" />
+    <Content Remove="wwwroot\lib\jquery\dist\jquery.min.map" />
+  </ItemGroup>
+</Project>
