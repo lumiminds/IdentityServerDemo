@@ -12,15 +12,13 @@ namespace IdentityServerDemo.Server
         {
             get
             {
-                List<IdentityResource> idResources =
-                new List<IdentityResource>
-                {
-new IdentityResources.OpenId(),
-new IdentityResources.Profile(),
-new IdentityResources.Email(),
-new IdentityResources.Phone(),
-new IdentityResources.Address(),
-new IdentityResource("roles", "User roles", new List<string> { "role" })
+                List<IdentityResource> idResources = new List<IdentityResource> {
+                    new IdentityResources.OpenId(),
+                    new IdentityResources.Profile(),
+                    new IdentityResources.Email(),
+                    new IdentityResources.Phone(),
+                    new IdentityResources.Address(),
+                    new IdentityResource("roles", "User roles", new List<string> { "role" })
                 };
                 return idResources;
             }
@@ -30,11 +28,8 @@ new IdentityResource("roles", "User roles", new List<string> { "role" })
         {
             get
             {
-                List<ApiScope> apiScopes =
-                new List<ApiScope>
-                {
-new ApiScope
-("employeesWebApi", "Employees Web API")
+                List<ApiScope> apiScopes = new List<ApiScope> {
+                    new ApiScope ("employeesWebApi", "Employees Web API")
                 };
                 return apiScopes;
             }
@@ -44,18 +39,16 @@ new ApiScope
         {
             get
             {
-                ApiResource apiResource1 = new
-                ApiResource("employeesWebApiResource",
-                "Employees Web API")
+                ApiResource apiResource1 = new ApiResource("employeesWebApiResource", "Employees Web API")
                 {
                     Scopes = { "employeesWebApi" },
                     UserClaims = { "role",
-"given_name",
-"family_name",
-"email",
-"phone",
-"address"
-}
+                        "given_name",
+                        "family_name",
+                        "email",
+                        "phone",
+                        "address"
+                    }
                 };
 
                 List<ApiResource> apiResources = new
@@ -75,14 +68,15 @@ new ApiScope
                     ClientId = "client1",
                     ClientName = "Client 1",
                     ClientSecrets = new[] {
-new Secret("client1_secret_code".Sha512()) },
+                        new Secret("client1_secret_code".Sha512())
+                    },
                     AllowedGrantTypes = GrantTypes.
-                ResourceOwnerPasswordAndClientCredentials,
+                    ResourceOwnerPasswordAndClientCredentials,
                     AllowedScopes = {
-"openid",
-"roles",
-"employeesWebApi"
-}
+                        "openid",
+                        "roles",
+                        "employeesWebApi"
+                    }
                 };
 
                 List<Client> clients = new List<Client>();
@@ -102,14 +96,14 @@ new Secret("client1_secret_code".Sha512()) },
                     Username = "user1",
                     Password = "password1",
                     Claims = new List<Claim>
-{
-new Claim("given_name", "firstName1"),
-new Claim("family_name", "lastName1"),
-new Claim("address", "USA"),
-new Claim("email","user1@localhost"),
-new Claim("phone", "123"),
-new Claim("role", "Admin")
-}
+                    {
+                        new Claim("given_name", "firstName1"),
+                        new Claim("family_name", "lastName1"),
+                        new Claim("address", "USA"),
+                        new Claim("email","user1@localhost"),
+                        new Claim("phone", "123"),
+                        new Claim("role", "Admin")
+                    }
                 };
 
                 TestUser usr2 = new TestUser()
@@ -118,19 +112,21 @@ new Claim("role", "Admin")
                     Username = "user2",
                     Password = "password2",
                     Claims = new List<Claim>
-{
-new Claim("given_name", "firstName2"),
-new Claim("family_name", "lastName2"),
-new Claim("address", "UK"),
-new Claim("email","user2@localhost"),
-new Claim("phone", "456"),
-new Claim("role", "Operator")
-}
+                    {
+                        new Claim("given_name", "firstName2"),
+                        new Claim("family_name", "lastName2"),
+                        new Claim("address", "UK"),
+                        new Claim("email","user2@localhost"),
+                        new Claim("phone", "456"),
+                        new Claim("role", "Operator")
+                    }
                 };
 
-                List<TestUser> testUsers = new List<TestUser>();
-                testUsers.Add(usr1);
-                testUsers.Add(usr2);
+                List<TestUser> testUsers = new List<TestUser>
+                {
+                    usr1,
+                    usr2
+                };
 
                 return testUsers;
             }

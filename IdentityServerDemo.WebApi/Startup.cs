@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -10,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Logging;
+using Microsoft.IdentityModel.Tokens;
 
 namespace IdentityServerDemo.WebApi
 {
@@ -26,6 +29,20 @@ namespace IdentityServerDemo.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+            IdentityModelEventSource.ShowPII = true;
+            services.AddAuthentication("Bearer")
+                .AddJwtBearer(o =>
+                {
+                    o.Authority = "https://localhost:5001";
+                    o.RequireHttpsMetadata = false;
+                    o.Audience = "employeesWebApiResource";
+                    o.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        RoleClaimType = "role"
+                    };
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,10 +53,11 @@ namespace IdentityServerDemo.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
